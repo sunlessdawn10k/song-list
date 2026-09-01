@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Seznam písniček</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#A9825A">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-row">
+    <div>
+      <h1>Seznam písniček</h1>
+      <p class="sub">Přidej písničky a odškrtávej, jak je hraješ.</p>
+    </div>
+    <button id="theme-toggle" aria-label="Přepnout tmavý režim">
+      <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+    </button>
+  </div>
+
+  <div class="banner" id="banner">Vše odehráno!</div>
+
+  <div id="progress-wrap">
+    <div class="progress-row">
+      <span class="progress-label">Odehráno</span>
+      <span class="progress-count" id="progress-count">0 / 0</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+  <button id="reset-big">Resetovat seznam</button>
+
+  <div class="add-row">
+    <input type="text" id="song-input" placeholder="Název písničky" maxlength="80">
+    <button id="add-btn" aria-label="Přidat">+</button>
+  </div>
+  <p class="error" id="error-msg">Zadej název písničky.</p>
+
+  <div class="controls-row">
+    <input type="text" id="search-input" placeholder="Hledat v seznamu…">
+    <button id="random-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.2" fill="currentColor" stroke="none"/><circle cx="16" cy="16" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg>
+      Náhodná
+    </button>
+  </div>
+  <div class="random-result" id="random-result"></div>
+
+  <div class="list" id="list"></div>
+  <p class="empty" id="empty-msg">Zatím žádné písničky. Přidej první výše.</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
